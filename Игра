@@ -1,0 +1,27 @@
+import random
+
+game_on = 1
+
+while game_on == 1:
+
+    lisst = [1, 2, 3]
+    ai = random.choice(lisst)
+
+    print("Ваш ход : 1 - камень, 2 - ножницы, 3 - бумага")
+    choice = int(input("Выберите ход: "))
+
+    if ai == choice:
+        print("Ваш выбор совпал, попробуйте ещё раз")
+
+    elif (ai == 1 and choice == 2) or (ai == 2 and choice == 3) or (ai == 3 and choice == 1):
+        print("Компьютер победил и обыграл вас. Вы проиграли.")
+
+    elif (ai == 2 and choice == 1) or (ai == 3 and choice == 2) or (ai == 1 and choice == 3):
+        print("Вы победили и обыграли компьютера. Вы выиграли")
+
+    print(f"Вы выбрали {choice}. Компьютер выбрал {ai}")
+
+    game_over = input("Играть ещё раз ? [Да/Нет] ")
+    if game_over == "Нет":
+        print("Спасибо что поиграли в игру.")
+        game_on = 0
